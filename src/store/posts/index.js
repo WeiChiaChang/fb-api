@@ -8,9 +8,6 @@ export default {
   mutations: {
     SET_POSTS (state, data) {
       state.posts = data
-    },
-    TOGGLE_THUMB (state) {
-      state.posts.thumbUp = !state.posts.thumbUp
     }
   },
   actions: {

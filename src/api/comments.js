@@ -20,8 +20,7 @@ export async function updateCommentThumbStatus (payload, id) {
     shareNum: payload.shareNum,
     commentNum: payload.commentNum,
     dateTime: payload.dateTime,
-    thumbUp: payload.thumbUp,
-    commentThread: payload.commentThread
+    thumbUp: payload.thumbUp
   })).data
 }
 

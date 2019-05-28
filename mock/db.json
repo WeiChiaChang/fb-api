@@ -4,14 +4,13 @@
     "name": "周節輪",
     "blueCheck": true,
     "comment": "雨下整夜",
-    "emojiNum": 4,
-    "commentNum": 32,
+    "emojiNum": 3,
     "dateTime": "5月17日下午6:12",
-    "thumbUp": true,
+    "thumbUp": false,
     "videoThumbnail": "https://i.imgur.com/RC2a2nO.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=RLBybxpwfNA",
     "videoTitle": "Jay Zou 周節輪【七里香 Qi-Li-Weeed】- Official Music Video",
-    "videoDescrption": "你不要逼我解除封印！我個人覺得他不做作、笑得又自然，每個人都可以發大財，不要問為什麼！這個問題你應該問問你自己施主，骨感的現實無法讓經濟好轉起步，好想訪問他啊！"
+    "videoDescrption": "你不要逼我解除封印！我個人覺得他不做作、笑得又自然，每個人都可以發大財，不要問為什麼！施主這個問題應該問問你自己，骨感的現實無法讓經濟好轉起步，好想訪問他啊！"
   },
   "comments": [
     {
@@ -22,50 +21,16 @@
       "emojiNum": 8,
       "dateTime": "4天",
       "thumbUp": false,
-      "commentThread": [
-        {
-          "id": 1011,
-          "thumbnail": "https://picsum.photos/80",
-          "name": "博恩站不起來！",
-          "blueCheck": true,
-          "comment": "2019還在聽！",
-          "thumbUp": false,
-          "emojiNum": 3,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1012,
-          "thumbnail": "https://picsum.photos/120",
-          "name": "今天的我沒有極限",
-          "blueCheck": false,
-          "comment": "是唱 Lemon 的那個玄米嗎？",
-          "thumbUp": false,
-          "emojiNum": 1,
-          "dateTime": "4天"
-        }
-      ],
       "id": 0
     },
     {
       "thumbnail": "https://i.imgur.com/HsP0tZq.jpg",
       "name": "胡瓜",
       "blueCheck": true,
-      "comment": "院子落葉",
+      "comment": "<p>院子落葉</p> <img class='inner-image' src='https://pic.52112.com/180623/JPG-180623A_313/319y5jnd2q_small.jpg'>",
       "emojiNum": 6,
       "dateTime": "4天",
       "thumbUp": true,
-      "commentThread": [
-        {
-          "id": 1013,
-          "thumbnail": "https://picsum.photos/310",
-          "name": "路人Ｃ",
-          "blueCheck": false,
-          "comment": "下面一位～",
-          "thumbUp": false,
-          "emojiNum": 2,
-          "dateTime": "4天"
-        }
-      ],
       "id": 1
     },
     {
@@ -73,31 +38,9 @@
       "name": "HowNotFun如何不爽",
       "blueCheck": true,
       "comment": "跟我的思念厚厚ㄧ疊",
-      "emojiNum": 5,
+      "emojiNum": 6,
       "dateTime": "4天",
-      "thumbUp": false,
-      "commentThread": [
-        {
-          "id": 1014,
-          "thumbnail": "https://picsum.photos/390",
-          "name": "呱吉吃大便",
-          "blueCheck": false,
-          "comment": "Ｊ...Ｊ格是？",
-          "thumbUp": false,
-          "emojiNum": 4,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1015,
-          "thumbnail": "https://picsum.photos/360",
-          "name": "小歐五百塊",
-          "blueCheck": false,
-          "comment": "叛徒",
-          "thumbUp": false,
-          "emojiNum": 7,
-          "dateTime": "4天"
-        }
-      ],
+      "thumbUp": true,
       "id": 2
     },
     {
@@ -108,60 +51,16 @@
       "emojiNum": 2,
       "dateTime": "4天",
       "thumbUp": false,
-      "commentThread": [
-        {
-          "id": 1016,
-          "thumbnail": "https://picsum.photos/410",
-          "name": "阿低櫻文",
-          "blueCheck": false,
-          "comment": "舊愛還是最美",
-          "thumbUp": false,
-          "emojiNum": 2,
-          "dateTime": "4天"
-        }
-      ],
       "id": 3
     },
     {
       "thumbnail": "https://i.imgur.com/StX8JBJ.jpg",
       "name": "東尼大木",
       "blueCheck": true,
-      "comment": "也無法將我的熱情冷卻",
-      "emojiNum": 3,
+      "comment": "<p>也無法將我的熱情冷卻</p> <img class='inner-image' src='https://i.imgur.com/y1OAoHU.gif%22'>",
+      "emojiNum": 4,
       "dateTime": "4天",
-      "thumbUp": false,
-      "commentThread": [
-        {
-          "id": 1017,
-          "thumbnail": "https://picsum.photos/540",
-          "name": "短頸鹿沒語",
-          "blueCheck": true,
-          "comment": "原唱出現了！",
-          "thumbUp": false,
-          "emojiNum": 7,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1018,
-          "thumbnail": "https://picsum.photos/280",
-          "name": "安迪沃克不做仰臥起坐",
-          "blueCheck": true,
-          "comment": "朝聖推！",
-          "thumbUp": false,
-          "emojiNum": 2,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1019,
-          "thumbnail": "https://picsum.photos/600",
-          "name": "Elain Tsai",
-          "blueCheck": false,
-          "comment": "杰倫這次的造型還滿像東尼大木的",
-          "thumbUp": false,
-          "emojiNum": 4,
-          "dateTime": "4天"
-        }
-      ],
+      "thumbUp": true,
       "id": 4
     },
     {
@@ -169,103 +68,90 @@
       "name": "神探P1kachu",
       "blueCheck": true,
       "comment": "你出現在我詩的每一頁",
-      "emojiNum": 7,
+      "emojiNum": 6,
       "dateTime": "3天",
-      "thumbUp": true,
-      "commentThread": [
-        {
-          "id": 1020,
-          "thumbnail": "https://picsum.photos/440",
-          "name": "fakeer lin",
-          "blueCheck": false,
-          "comment": "皮卡皮卡",
-          "thumbUp": false,
-          "emojiNum": 1,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1021,
-          "thumbnail": "https://picsum.photos/530",
-          "name": "是不是這樣的夜晚你才會這樣的想起我",
-          "blueCheck": false,
-          "comment": "一二發大財",
-          "thumbUp": false,
-          "emojiNum": 8,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1022,
-          "thumbnail": "https://picsum.photos/490",
-          "name": "從零到無",
-          "blueCheck": false,
-          "comment": "豁出去啊發大財",
-          "thumbUp": false,
-          "emojiNum": 2,
-          "dateTime": "4天"
-        },
-        {
-          "id": 1023,
-          "thumbnail": "https://picsum.photos/660",
-          "name": "三四五",
-          "blueCheck": false,
-          "comment": "直直起啊直直起啊",
-          "thumbUp": false,
-          "emojiNum": 1,
-          "dateTime": "4天"
-        }
-      ],
+      "thumbUp": false,
       "id": 5
     },
     {
       "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
       "name": "台南億載金城武",
       "blueCheck": true,
-      "comment": "jiuiuio",
-      "emojiNum": 1,
-      "dateTime": "4天",
-      "thumbUp": true,
-      "id": 8
-    },
-    {
-      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
-      "name": "台南億載金城武",
-      "blueCheck": true,
-      "comment": "ioioioip",
-      "thumbUp": false,
-      "emojiNum": 0,
-      "dateTime": "4天",
-      "id": 10
-    },
-    {
-      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
-      "name": "台南億載金城武",
-      "blueCheck": true,
-      "comment": "pioi",
-      "emojiNum": 1,
-      "dateTime": "4天",
-      "thumbUp": true,
-      "id": 13
-    },
-    {
-      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
-      "name": "台南億載金城武",
-      "blueCheck": true,
-      "comment": "o",
-      "emojiNum": 1,
-      "dateTime": "4天",
-      "thumbUp": true,
-      "id": 18
-    },
-    {
-      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
-      "name": "台南億載金城武",
-      "blueCheck": true,
       "comment": "喔喔喔喔！熊本熊！",
-      "thumbUp": false,
       "emojiNum": 0,
       "dateTime": "4天",
+      "thumbUp": false,
       "id": 19
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "tfsdfs",
+      "emojiNum": 1,
+      "dateTime": "4天",
+      "thumbUp": true,
+      "id": 20
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "皮卡～",
+      "emojiNum": 0,
+      "dateTime": "4天",
+      "thumbUp": false,
+      "id": 21
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "發大財！！！！！",
+      "emojiNum": 1,
+      "dateTime": "4天",
+      "thumbUp": true,
+      "id": 22
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "你好臺灣",
+      "emojiNum": 1,
+      "dateTime": "4天",
+      "thumbUp": true,
+      "id": 24
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "皮卡丘發大財！！！！",
+      "emojiNum": 0,
+      "dateTime": "4天",
+      "thumbUp": false,
+      "id": 25
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "ssdsd;sldds",
+      "emojiNum": 1,
+      "dateTime": "4天",
+      "thumbUp": true,
+      "id": 27
+    },
+    {
+      "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+      "name": "台南億載金城武",
+      "blueCheck": true,
+      "comment": "kko",
+      "emojiNum": 0,
+      "dateTime": "4天",
+      "thumbUp": false,
+      "id": 28
     }
-  ],
-  "commentThread": []
+  ]
 }

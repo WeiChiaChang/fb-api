@@ -35,13 +35,10 @@
     <div class="feedback-info">
       <div class="feedback-emojis">
         <i class="icons like-icon"></i>
-        <!-- <i class="icons haha-icon"></i> -->
-        <!-- <i class="icons love-icon"></i> -->
         劉德華、東尼大木和其他{{posts.emojiNum}}人
       </div>
       <div class="threads-and-share">
-        <div class="threads">{{posts.commentNum}}則留言</div>
-        <!-- <div class="share">{{posts.shareNum}}次分享</div> -->
+        <div class="threads">{{comments.length}}則留言</div>
       </div>
     </div>
     <div class="feedback-action">
@@ -73,8 +70,6 @@
           <div class="my-comment-emojis">
             <!-- <span class="add-emojis"></span> -->
             <!-- <span class="add-photo"></span> -->
-            <!-- <span class="add-gif"></span> -->
-            <!-- <span class="add-sticker"></span> -->
           </div>
         </div>
       </div>
@@ -85,7 +80,10 @@
               <img :src="item.thumbnail" alt>
             </div>
             <div class="people-comment">
-              <div class="people-comment-container">
+              <div
+                class="people-comment-container"
+                :class="isHTML(item.comment) ? 'comment-contains-html' : ''"
+              >
                 <div class="people-name">
                   <a>{{item.name}}</a>
                   <i v-if="item.blueCheck" class="blue-check"></i>
@@ -98,22 +96,19 @@
                 ></div>
                 <div
                   class="people-saying"
-                  v-else-if="item.comment.includes('發大財')"
-                  v-html="highlight(item.comment)"
-                  @click="money"
-                ></div>
-                <div
-                  class="people-saying"
                   v-else-if="item.comment.includes('熊本熊')"
                   v-html="highlight(item.comment)"
                   @click="kumamon"
                 ></div>
+                <div
+                  class="people-saying"
+                  v-else-if="isHTML(item.comment)" v-html="item.comment"></div>
                 <div class="people-saying" v-else>{{item.comment}}</div>
               </div>
               <div class="comment-reactions comment-too-short" v-if="item.emojiNum > 0">
                 <i class="icons like-icon"></i>
                 <!-- <i class="icons ohhh-icon"></i>
-              <i class="icons haha-icon"></i>
+                <i class="icons haha-icon"></i>
                 <i class="icons angry-icon"></i>-->
                 <span class="number">{{item.emojiNum}}</span>
               </div>
@@ -159,12 +154,6 @@
                     @click="pikachu"
                   ></div>
                   <div
-                    v-else-if="thread.comment.includes('發大財')"
-                    class="people-saying"
-                    v-html="highlight(thread.comment)"
-                    @click="money"
-                  ></div>
-                  <div
                     v-else-if="thread.comment.includes('熊本熊')"
                     class="people-saying"
                     v-html="highlight(thread.comment)"
@@ -181,7 +170,7 @@
                   <i class="icons angry-icon"></i>-->
                   <span class="number">{{thread.emojiNum}}</span>
                 </div>
-                <!-- TODO Thread 的 id 要另外處理，目前傾向不處理這個機制 -->
+                <!-- TODO Thread 在 json-server 要另外處理，目前不處理 -->
                 <div
                   @click="openModal(thread.id)"
                   :class="[thread.name === '台南億載金城武' ? 'show-menu-when-hover': '', thread.emojiNum < 1 ? 'short-ver-menu': '']"
@@ -202,39 +191,8 @@
           </div>
         </div>
       </div>
-      <!-- 找到田 -->
-      <!-- <div class="people-comment-wrapper university">
-        <div class="people-avatar">
-          <img src="./assets/land.jpg" alt>
-        </div>
-        <div class="people-comment">
-          <div class="people-comment-container university">
-            <div class="people-name">
-              <a target="_blank">找到田大學</a>
-            </div>
-            <div class="people-saying university">五樓要不要藉這個機會在神明的面前澄清一下？</div>
-            <img class="inner-image" src="https://i.imgur.com/wvWFAMT.png" alt>
-          </div>
-          <div class="comment-reactions">
-            <i class="icons like-icon"></i>
-            <i class="icons cry-icon"></i>
-            <span class="number">875</span>
-          </div>
-        </div>
-      </div>
-      <div class="like-and-response-wrapper">
-        <div class="like-comment">
-          <a>讚</a>
-          <span class="nbsp">·</span>
-        </div>
-        <div class="response-comment">
-          <a>回覆</a>
-          <span class="nbsp">·</span>
-        </div>
-        <div class="days-comment">1天</div>
-      </div>-->
     </div>
-    <!-- TODO Modal -->
+    <!-- Modal -->
     <div>
       <transition name="modal">
         <div v-if="isOpen">
@@ -289,6 +247,12 @@ export default {
     }
   },
   methods: {
+    // TODO 檢查 comment 是否帶有 html tag
+    // Ref: https://stackoverflow.com/questions/15458876/check-if-a-string-is-html-or-not/15458987
+    isHTML(str) {
+      var doc = new DOMParser().parseFromString(str, "text/html");
+      return Array.from(doc.body.childNodes).some(node => node.nodeType === 1);
+    },
     addCommentsEmoji(id) {
       const temp = this.$store.state.comments.comments.find(item => item.id === id)
       return temp.emojiNum + 1
@@ -301,6 +265,7 @@ export default {
       const temp = this.$store.state.comments.comments.find(item => item.id === id)
       return temp.thumbUp
     },
+    // 留言，對焦到訊息輸入框
     setFocus() {
       this.$refs.typing.focus();
     },
@@ -311,7 +276,6 @@ export default {
         "blueCheck": this.posts.blueCheck,
         "comment": this.posts.comment,
         "emojiNum": !this.postThumbup ? this.addPostsEmoji : this.minusPostEmoji,
-        "commentNum": this.posts.commentNum,
         "dateTime": this.posts.dateTime,
         "thumbUp": !this.postThumbup,
         "videoThumbnail": this.posts.videoThumbnail,
@@ -336,8 +300,7 @@ export default {
         "emojiNum": !this.commentThumbup(id) ? this.addCommentsEmoji(id) : this.minusCommentsEmoji(id),
         "commentNum": this.comments.find(item => item.id === id).commentNum,
         "dateTime": this.comments.find(item => item.id === id).dateTime,
-        "thumbUp": !this.comments.find(item => item.id === id).thumbUp,
-        "commentThread": this.comments.find(item => item.id === id).commentThread
+        "thumbUp": !this.comments.find(item => item.id === id).thumbUp
       })
 
       try {
@@ -351,9 +314,6 @@ export default {
       if (keyword.includes('皮卡')) {
         let highlighted = keyword.replace(/([皮卡]+)/g, `<span class="easter-egg-styling">$1</span>`);
         return highlighted
-      } else if (keyword.includes('發大財')) {
-        let highlighted = keyword.replace(/([發大財]+)/g, `<span class="easter-egg-styling">$1</span>`);
-        return highlighted
       } else if (keyword.includes('熊本熊')) {
         let highlighted = keyword.replace(/([熊本熊]+)/g, `<span class="easter-egg-styling">$1</span>`);
         return highlighted
@@ -362,23 +322,26 @@ export default {
       }
     },
     async sendComment(msg) {
-      const temp = Object.assign({}, {
-        "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
-        "name": "台南億載金城武",
-        "blueCheck": true,
-        "comment": msg,
-        "thumbUp": false,
-        "emojiNum": 0,
-        "dateTime": '4天'
-      })
+      // 避免送出空字元的訊息，trim 處理過再送
+      if (msg.trim()) {
+        const temp = Object.assign({}, {
+          "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+          "name": "台南億載金城武",
+          "blueCheck": true,
+          "comment": msg,
+          "thumbUp": false,
+          "emojiNum": 0,
+          "dateTime": '4天'
+        })
 
-      try {
-        await addComment(temp)
-        this.$store.dispatch('comments/getComments')
-      } catch (error) {
-        alert('留言失敗ＱＱ')
+        try {
+          await addComment(temp)
+          this.$store.dispatch('comments/getComments')
+        } catch (error) {
+          alert('留言失敗ＱＱ')
+        }
+        this.myMsg = ''
       }
-      this.myMsg = ''
     },
     deleteComment(id) {
       this.$store.dispatch('comments/deleteComment', id)
@@ -408,34 +371,6 @@ export default {
       window.setTimeout(function () {
         img.parentNode.removeChild(img)
       }, 4300)
-    },
-    money() {
-      var sound = new Audio("https://weichiachang.github.io/happy-halloween/images/fadacai.mp3")
-      // var sound = new Audio("./assets/fadacai.mp3")
-      sound.play()
-
-      var img = new Image()
-      img.src = 'https://i.imgur.com/X8hSR2Z.gif'
-      img.style.width = '374px'
-      img.style.height = '375px'
-      img.style.transition = '6s all'
-      img.style.position = 'fixed'
-      img.style.right = '-374px'
-      img.style.bottom = '150px'
-      img.style.zIndex = 999999
-
-      document.body.appendChild(img)
-
-      window.setTimeout(function () {
-        img.style.right = 'calc(50% - 187px)'
-      }, 50)
-
-      window.setTimeout(function () {
-        img.style.right = 'calc(100% + 375px)'
-      }, 4300)
-      window.setTimeout(function () {
-        img.parentNode.removeChild(img)
-      }, 7300)
     },
     kumamon() {
       var img = new Image
@@ -475,7 +410,6 @@ body
 
 #app
   min-width: 500px
-  // height: 970px
   padding-bottom: 12px
   background: white
   border: 1px solid #dddfe2
@@ -582,6 +516,8 @@ body
           margin-top: 3px
           max-height: 40px
           width: 330px
+          // 只用 CSS 讓多行文字省略，多餘文字以刪節號顯示
+          // Ref: https://www.minwt.com/webdesign-dev/css/18447.html
           overflow: hidden
           -webkit-box-orient: vertical
           -webkit-line-clamp: 2
@@ -791,10 +727,7 @@ body
   .people-comment-wrapper
     margin-top: 10px
     display: flex
-    align-items: center
-
-    &.university
-      align-items: flex-start
+    align-items: flex-start
 
     .people-avatar img
       height: 32px
@@ -809,8 +742,6 @@ body
       border-radius: 18px
       color: #1c1e21
       line-height: 16px
-      position: relative
-      line-height: 16px
       padding: 8px 12px
       position: relative
 
@@ -822,7 +753,7 @@ body
         font-size: 14px
         display: flex
 
-        &.university
+        &.comment-contains-html
           flex-direction: column
 
         .people-name
@@ -849,7 +780,7 @@ body
             display: inline-block
 
         .people-saying
-          &.university
+          p
             margin: 5px 0
 
           &.secret-magic
@@ -868,7 +799,7 @@ body
 
         .inner-image
           width: 360px
-          height: 204px
+          // height: 204px
           margin-bottom: 5px
 
       .comment-reactions

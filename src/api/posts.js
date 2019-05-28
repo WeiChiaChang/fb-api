@@ -13,7 +13,6 @@ export async function updateThumbStatus (payload) {
     comment: payload.comment,
     emojiNum: payload.emojiNum,
     shareNum: payload.shareNum,
-    commentNum: payload.commentNum,
     dateTime: payload.dateTime,
     thumbUp: payload.thumbUp,
     videoThumbnail: payload.videoThumbnail,
