@@ -281,7 +281,7 @@ export default {
         "videoThumbnail": this.posts.videoThumbnail,
         "videoUrl": this.posts.videoUrl,
         "videoTitle": this.posts.videoTitle,
-        "videoDescrption": this.posts.videoDescrption
+        "videoDescription": this.posts.videoDescription
       })
 
       try {

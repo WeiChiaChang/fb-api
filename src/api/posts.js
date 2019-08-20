@@ -18,6 +18,6 @@ export async function updateThumbStatus (payload) {
     videoThumbnail: payload.videoThumbnail,
     videoUrl: payload.videoUrl,
     videoTitle: payload.videoTitle,
-    videoDescrption: payload.videoDescrption
+    videoDescription: payload.videoDescription
   })).data
 }
