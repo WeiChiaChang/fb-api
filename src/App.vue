@@ -325,7 +325,7 @@ export default {
       // 避免送出空字元的訊息，trim 處理過再送
       if (msg.trim()) {
         const temp = Object.assign({}, {
-          "thumbnail": "https://i.imgur.com/gLtCsfv.jpg",
+          "thumbnail": "https://upload.cc/i1/2019/08/20/YhrW2H.jpg",
           "name": "台南億載金城武",
           "blueCheck": true,
           "comment": msg,
@@ -353,7 +353,7 @@ export default {
     },
     pikachu() {
       var img = new Image()
-      img.src = 'https://i.imgur.com/g99m5gz.gif'
+      img.src = 'https://upload.cc/i1/2019/08/20/m0gIS8.gif'
       img.style.width = '450px'
       img.style.height = '350px'
       img.style.transition = '4s all'
