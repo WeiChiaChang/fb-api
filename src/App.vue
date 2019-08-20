@@ -27,7 +27,7 @@
         <div class="video-description">
           <div class="youtube-title">YOUTUBE.COM</div>
           <div class="video-title">{{posts.videoTitle}}</div>
-          <div class="video-desc">{{posts.videoDescrption}}</div>
+          <div class="video-desc">{{posts.videoDescription}}</div>
         </div>
       </div>
     </a>
